@@ -125,17 +125,20 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
+      overflow: visible;
     }
 
     .research-card {
-      background: white;
-      border-radius: 10px;
-      padding: 18px;
-      border-left: 5px solid #003366;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
+     position: relative; /* Required for tooltip positioning */
+     background: white;
+     border-radius: 10px;
+     padding: 18px;
+     border-left: 5px solid #003366;
+     box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+     cursor: pointer;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+     overflow: visible; /* Prevent tooltip clipping */
+   }
 
     .research-card:hover {
       transform: translateY(-5px);
@@ -147,10 +150,46 @@
       color: #003366;
     }
 
-    .research-card p {
+    .research-card p { 
       color: #555;
       font-size: 0.95rem;
     }
+
+    /* TOOLTIP */
+
+  .research-tooltip {
+  display: none;
+
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 280px;
+  padding: 14px;
+
+  background: #003366;
+  color: white;
+  border-radius: 8px;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  z-index: 9999;
+}
+
+.research-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 8px solid transparent;
+  border-top-color: #003366;
+}
+
+.research-card:hover .research-tooltip {
+  display: block;
+}
 
     /* NOTE BOX */
     .research-note {
@@ -244,9 +283,19 @@
           <p>Assessing systemic risks and financial stability.</p>
         </div>
 
+        <div class="research-tooltip">
+           Focuses on analysing financial sectors and macroeconomic data to identify emerging vulnerabilities, assess systemic risks, and develop forward-looking macroprudential frameworks. 
+        </div>
+        </div>
+
         <div class="research-card">
           <h3>Financial Sector Development</h3>
           <p>Evaluating financial systems and structural trends.</p>
+        </div>
+
+        <div class="research-tooltip">
+           Analysing financial system performance and structural economic trends to identify opportunities for financial sector deepening and sustainable growth.
+        </div>
         </div>
 
         <div class="research-card">
@@ -254,11 +303,19 @@
           <p>Econometric modelling across time and entities.</p>
         </div>
 
+          <div class="research-tooltip">
+            Applying panel data econometric techniques to analyse complex datasets, uncovering insights across time and entities to inform policy and research.
+          </div>
+        </div>
+
         <div class="research-card">
           <h3>Data Visualisation (R)</h3>
           <p>Turning complex datasets into clear insights.</p>
         </div>
 
+        <div class="research-tooltip">
+          Using R programming to create compelling data visualisations that transform complex datasets into clear, actionable insights for policymakers and stakeholders.
+        </div>
       </div>
 
       <div class="research-note">
