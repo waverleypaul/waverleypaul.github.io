@@ -435,6 +435,19 @@ const INSIGHTS = [
     // date/dateSort, which still correctly describe the August Insight.
     hubDate: "September 2026",
     hubDateSort: "2026-09-03"
+  },
+
+  {
+    id: "quantitative-methods",
+    date: "September 2026",
+    dateSort: "2026-09-11",
+    title: "Quantitative Models: A Reality Check",
+    summary: "<p>Quantitative models help us understand complex problems, assess risks, explore scenarios, and inform decisions. But models are simplifications of reality, built on data, assumptions, and choices. Their value therefore depends not only on the results they produce, but on understanding what those results mean, and where their limitations lie.</p><p>A McKinsey article “Demystifying modeling: How quantitative models can—and can’t—explain the world” provides a useful introduction to what quantitative models can, and cannot, tell us.</p>",
+    category: "panelData",
+    hubTeaser: "Quantitative models are essential for helping us make sense of a world that is too complex to understand all at once. Their usefulness, however, depends on understanding both their strengths and limitations.",
+    sourceUrl: "https://www.mckinsey.com/capabilities/risk-and-resilience/our-insights/demystifying-modeling-how-quantitative-models-can-and-cant-explain-the-world",
+   //Add other fields below this line only if a learning hub article is set//
+
   }
 
 ];
